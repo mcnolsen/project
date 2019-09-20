@@ -1,4 +1,4 @@
-# project
+# Project for a client
 
 <h2>Client: Roskilde SUP Klub</h2>
 
