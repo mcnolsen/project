@@ -1,5 +1,5 @@
 .navbar {
-    background-color: red;
+    background-color: darkslateblue;
     overflow: hidden;
 }
 
@@ -7,10 +7,10 @@
     float: top;
     color: white;
     text-align: center;
-    padding: 14px 24px;
+    padding: 0px 50px;
     text-decoration: none;
     font-size: 20px;
-    margin: 0;
+    margin: 50px;
 }
 
 .navbar a:hover {
@@ -21,4 +21,8 @@
 .navbar a.active {
     background-color: red;
     color: white;
+}
+h1{
+    color: darkslateblue;
+
 }
