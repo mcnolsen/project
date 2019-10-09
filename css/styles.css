@@ -8,8 +8,8 @@
     position: -webkit-sticky; /* Til safari brugere*/
 }
 
-.navbar a {
-    float: top;
+.navbar-li a {
+    float: left;
     color: white;
     text-align: center;
     padding: 20px 24px;
@@ -18,12 +18,16 @@
     margin: 0;
 }
 
-.navbar a:hover {
+.navbar-li a:hover {
     background-color: grey;
     color: white;
 }
 
-.navbar a.active {
+.navbar-li a.active {
     background-color: black;
     color: grey;
+}
+.fb-page {
+    float: right;
+    height: 100%;
 }
