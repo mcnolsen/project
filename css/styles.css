@@ -1,6 +1,11 @@
 .navbar {
-    background-color: red;
+    background-color: cadetblue;
     overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    position: -webkit-sticky; /* Til safari brugere*/
 }
 
 .navbar a {
@@ -11,14 +16,15 @@
     text-decoration: none;
     font-size: 20px;
     margin: 0;
+
 }
 
 .navbar a:hover {
-    background-color: beige;
+    background-color: grey;
     color: white;
 }
 
 .navbar a.active {
-    background-color: red;
-    color: white;
+    background-color: black;
+    color: grey;
 }
