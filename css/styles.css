@@ -4,6 +4,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    padding-left: 12%;
     position: sticky;
     position: -webkit-sticky; /* Til safari brugere*/
 }
@@ -34,10 +35,11 @@
 
 .center-text {
     margin: auto;
-    padding: 5%;
+    padding: 1%;
     background-color: lightgrey;
     width: 60%;
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10%;
 }
 .p {
     text-align: left;
@@ -64,11 +66,18 @@ h1 {
 .footer {
     width: 100%;
     background-color: cadetblue;
-    padding: 1px;
     padding-left: 10%;
     font-family: Arial, Helvetica, sans-serif;
+    left: 0;
+    bottom: 0;
+    position: fixed;
 }
 
-.footer-element {
+.footer-element1 {
+    float: left;
+    padding-left: 10%
+}
 
+.footer-element2 {
+    padding-left: 40%;
 }
