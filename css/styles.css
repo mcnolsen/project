@@ -61,14 +61,14 @@ h1 {
     float: left;
 }
 
-footer {
+.footer {
     width: 100%;
     background-color: cadetblue;
     padding: 1px;
     padding-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.footer-del {
-    width: 30%;
-    padding: auto;
+.footer-element {
+
 }
