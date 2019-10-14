@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Roskilde SUP Klub login</title>
+    <title>Kontakt</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
 <a href="index.html">
-<img src="img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
+    <img src="img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
 </a>
 <ul class="navbar">
     <li class="navbar-li">
@@ -27,26 +26,41 @@
         <a class="nav-item" href="kontakt.html">Kontakt Os</a>
     </li>
 </ul>
+<br>
+<br>
+<div class="center-text">
+    <h1>Registrer og log in</h1>
+    <h2>Test titel 1</h2>
+    <p class =p">
+    <h3>Login form</h3>
+    <form id="login-form">
+        <input id="user" type="username" placeholder="Enter username here" value=""/>
+        <input id="password" type="password" placeholder="Enter password here" value=""/>
+        <input id="logon" type="submit" value="login" onClick="checkLogin()"/>
+    </form>
+
+    <h3>Register</h3>
+    <form id="register">
+        <input id="user" type="username" placeholder="Enter username here" value=""/>
+        <input id="password" type="password" placeholder="Enter password here" value=""/>
+        <input id="register" type="submit" value="register" onClick="storeLogin()"/>
+    </form>
+    </br>
+    </br>
+
+        <textarea>Fancy test titel 1</textarea>
+        </label>
+</div>
 <script src="app/app.js">  </script>
 
-<script src="app/Login.js"></script>
-
-<br>
-<br>
-<br>
-
-<h3>Login form</h3>
-<form id="login-form">
-    <input id="user" type="username" placeholder="Enter username here" value=""/>
-    <input id="password" type="password" placeholder="Enter password here" value=""/>
-    <input id="logon" type="submit" value="login" onClick="checkLogin()"/>
-</form>
-
-<h3>Register</h3>
-<form id="register">
-    <input id="user" type="username" placeholder="Enter username here" value=""/>
-    <input id="password" type="password" placeholder="Enter password here" value=""/>
-    <input id="register" type="submit" value="register" onClick="storeLogin()"/>
-</form>
+<div class="footer">
+    <div class="footer-element1">
+        <h4>Roskilde SUP Klub</h4>
+        <p>Facebook</p>
+        <p>Facebook</p>
+    </div>
+    <div class="footer-element2">
+        <h4>Sociale Medier</h4>
+        <p><a href="https://www.facebook.com/Roskildesupklub/">Facebook</a></p>
 </body>
 </html>
