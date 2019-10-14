@@ -51,7 +51,7 @@
     padding-left: 20px;
 }
 
-.h1 {
+h1 {
     text-align: center;
 }
 
@@ -64,6 +64,11 @@
 footer {
     width: 100%;
     background-color: cadetblue;
-    padding: 0;
-    margin: 0;
+    padding: 1px;
+    padding-left: 10%;
+}
+
+.footer-del {
+    width: 30%;
+    padding: auto;
 }
