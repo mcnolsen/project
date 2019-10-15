@@ -72,6 +72,16 @@ h1 {
     left: 0;
     bottom: 0;
     position: fixed;
+    color: white;
+
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: blue;
 }
 
 .footer-element1 {
