@@ -25,10 +25,26 @@
     </li>
 </ul>
 <div class="center-text">
-    <h1>Kontakt</h1>
-    <h2>Test titel 1</h2>
+    <h1>Her kan du kontakte os</h1>
 
-         <textarea>Hvad handler henvendelsen om?</textarea>
+
+    <h3 style="margin-bottom: 2%; text-align: center;">Contact form</h3>
+    <form id="login-form" style="margin: auto; text-align: center;">
+
+        <h4>Name:</h4>
+        <input id="name" type="name" placeholder="Enter your name" value=""/>
+        <h4>Phone:</h4>
+        <input id="phone" type="phone" placeholder="Enter your phone number here" value=""/>
+        <h4>Subject:</h4>
+        <input id="subject" type="subject" placeholder="Enter your subject here" value=""/>
+        </br>
+        </br>
+        <input id="contact" type="submit" value="Contact us" onClick="checkLogin()"/>
+        </br>
+        </br>
+    </form>
+
+
     </label>
 </div>
 <script src="app/app.js">  </script>
