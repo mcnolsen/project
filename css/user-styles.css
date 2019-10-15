@@ -28,3 +28,11 @@
     background-color: black;
     color: grey;
 }
+.center-text {
+    margin: auto;
+    padding: 1%;
+    background-color: lightgrey;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10%;
+}
