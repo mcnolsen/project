@@ -36,3 +36,8 @@
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 10%;
 }
+
+#register-form {
+    margin: auto;
+    padding-top: 5%;
+}
