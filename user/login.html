@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../app/Login.js">  </script>
+</head>
+<body>
+<a href="../index.html">
+    <img src="../img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
+</a>
+<ul class="navbar">
+    <li class="navbar-li">
+        <a class="nav-item" href="../index.html">Hjem</a>
+    </li>
+    <li class="navbar-li">
+        <a class="nav-item" href="../omos.html">Om Os</a>
+    </li>
+    <li class="navbar-li">
+        <a class="nav-item" href="login.html">Login</a>
+    </li>
+    <li class="navbar-li">
+        <a class="nav-item" href="../kontakt.html">Kontakt Os</a>
+    </li>
+</ul>
+<div class="center-text">
+    <h1>Login</h1>
+    <p style="margin-bottom: 2%; text-align: center;">Hvis du allerede er en oprettet bruger, så kan du logge ind på siden her:</p>
+    <br>
+    <br>
+    <h3 style="margin-bottom: 2%; text-align: center;">Login form</h3>
+    <form id="login-form" style="margin: auto; text-align: center;">
+        <input id="userLogin" type="username" placeholder="Enter username here" value=""/>
+        <input id="passwordLogin" type="password" placeholder="Enter password here" value=""/>
+        <input id="logonLogin" type="submit" value="login" onClick="loginUser()"/>
+    </form>
+    <br>
+    <h2 style="text-align: center;">Opret Bruger</h2>
+    <form class id="register-form" style="margin: auto; text-align: center;">
+        <p><b>Username</b></p>
+        <input id="userRegister" type="username" placeholder="Enter username here" value=""/>
+        <p><b>Password</b></p>
+        <input id="passwordRegister" type="password" placeholder="Enter password here" value=""/>
+        <p><b>Admin?</b></p>
+        <select id ="adminRegister" name="admin">
+            <option value="false">Nej</option>
+            <option value="true">Ja</option>
+        </select>
+        <br><br>
+        <input id="register" type="button" value="register" onClick="registerUser()"/>
+    </form>
+</div>
+
+<script src="../app/app.js">  </script>
+
+<div class="footer">
+    <div class="footer-element1">
+        <h4>Roskilde SUP Klub</h4>
+        <p>Strandvejen 18, 4000 Veddelev, Roskilde, Danmark</p>
+    </div>
+    <div class="footer-element2">
+        <h4>Sociale Medier</h4>
+        <p><a href="https://www.facebook.com/Roskildesupklub/">Facebook</a></p>
+    </div>
+
+</body>
+</html>
