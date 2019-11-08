@@ -6,44 +6,39 @@ var userDataArray = [{
     userID: 1,
     username: "abc",
     password: "1234",
+    admin: true,
     tlfNumber: "",
-    email: "",
-    admin: true
+    email: ""
 }];
-function userUpdate(){
-    var usernameUpdate = document.getElementById( "userRegister").value;
-    console.log(usernameUpdate);
-}
-//Looper over alle usernames til de index der angives af y. Jeg er stuck fuck me
-//Lorte kode som jeg ikke kan få til at virke med at tjekke om brugeren allerede er der
+//Looper over alle usernames. Tjekker om username eksisterer i arrayet.
 function checkUser(){
-    userUpdate();
-    for (y = 0; y == userDataArray.length; y = y + 1) {
-        console.log(y);
-        if (y = userDataArray.length){
-            console.log("works")
+    var userExist = 0;
+    for (y = 0; y < userDataArray.length; y++) {
+        if (userDataArray[y].username == document.getElementById( "userRegister").value) {
+            var userExist = true;
+            break;
         }
-        /*if (userDataArray[y].username == document.getElementById( "userRegister").value) {
-            console.log(userDataArray[y].username);
-            return registerUser();
-        }
-        */
         else {
-            console.log("XD");
+            var userExist = false;
         }
+    }
+    //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
+    if (userExist) {
+    }
+    else {
+        registerUser();
     }
 }
 
 function registerUser(){
-    checkUser();
     var i = userDataArray.length + 1;
     userDataArray.push({
-            userID: i,
-            username: document.getElementById( "userRegister").value,
-            password: document.getElementById("passwordRegister").value,
-            admin: document.getElementById("adminRegister").value,
-            tlfNumber: "",
-            email: ""
+        userID: i,
+        username: document.getElementById( "userRegister").value,
+        password: document.getElementById("passwordRegister").value,
+        admin: document.getElementById("adminRegister").value,
+        tlfNumber: "",
+        email: ""
         })
 }
 
@@ -52,13 +47,13 @@ function registerUser(){
 
 function loginUser() {
 
-    var strJSON = JSON.stringify(userData);
+    var strJSON = JSON.stringify(userDataArray);
     console.log(userData);
     if (loginUserCheck()) {
         alert("Alert");
     }
     else {
-        localStorage.setItem(userData.username, strJSON);
+        localStorage.setItem(userDataArray.username, strJSON);
         console.log(strJSON);
     }
 }
