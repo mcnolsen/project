@@ -39,8 +39,8 @@
     <h2 style="text-align: center;">Opret Bruger</h2>
     <form class id="register-form" style="margin: auto; text-align: center;">
         <p><b>Username</b></p>
-        <input id="userRegister" type="username" placeholder="Enter username here" value=""/>
-        <p><b>Password</b></p>
+        <input id="userRegister" type="username" placeholder="Enter username here" value="" onChange="userUpdate()"/>
+        <p><b>Password</b></p>: <a class="demo-text"></a>
         <input id="passwordRegister" type="password" placeholder="Enter password here" value=""/>
         <p><b>Admin?</b></p>
         <select id ="adminRegister" name="admin">
@@ -48,7 +48,7 @@
             <option value="true">Ja</option>
         </select>
         <br><br>
-        <input id="register" type="button" value="register" onClick="registerUser()"/>
+        <input id="register" type="button" value="register" onClick="checkUser()"/>
     </form>
 </div>
 

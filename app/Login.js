@@ -6,38 +6,50 @@ var userDataArray = [{
     userID: 1,
     username: "abc",
     password: "1234",
+    tlfNumber: "",
+    email: "",
     admin: true
 }];
-
+function userUpdate(){
+    var usernameUpdate = document.getElementById( "userRegister").value;
+    console.log(usernameUpdate);
+}
 //Looper over alle usernames til de index der angives af y. Jeg er stuck fuck me
-function checkUser(username, userDataArray){
-    for (y = 0; y = userDataArray.length; y++) {
-        if (userDataArray[y].username = username) {
-            console.log("Found");
-            var userExist = 0;
-            break;
+//Lorte kode som jeg ikke kan få til at virke med at tjekke om brugeren allerede er der
+function checkUser(){
+    userUpdate();
+    for (y = 0; y == userDataArray.length; y = y + 1) {
+        console.log(y);
+        if (y = userDataArray.length){
+            console.log("works")
         }
+        /*if (userDataArray[y].username == document.getElementById( "userRegister").value) {
+            console.log(userDataArray[y].username);
+            return registerUser();
+        }
+        */
         else {
-            var userExist = 1;
+            console.log("XD");
         }
-    }
-};
-
-function registerUser(){
-    let i = userDataArray.length + 1;
-    let username = document.getElementById("userRegister").value;
-    if (userExist = 0) {
-        userDataArray.push({
-            userID: i,
-            username: username,
-            password: document.getElementById("passwordRegister").value,
-            admin: document.getElementById("adminRegister").value
-        });
-    }
-    else {
-        alert("fuk bich")
     }
 }
+
+function registerUser(){
+    checkUser();
+    var i = userDataArray.length + 1;
+    userDataArray.push({
+            userID: i,
+            username: document.getElementById( "userRegister").value,
+            password: document.getElementById("passwordRegister").value,
+            admin: document.getElementById("adminRegister").value,
+            tlfNumber: "",
+            email: ""
+        })
+}
+
+
+
+
 function loginUser() {
 
     var strJSON = JSON.stringify(userData);
