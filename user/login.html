@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../app/Login.js">  </script>
 </head>
-<body>
+<body onload="storeUserLocal()">
 <a href="../index.html">
     <img src="../img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
 </a>
@@ -33,7 +33,9 @@
     <form id="login-form" style="margin: auto; text-align: center;">
         <input id="userLogin" type="username" placeholder="Enter username here" value=""/>
         <input id="passwordLogin" type="password" placeholder="Enter password here" value=""/>
-        <input id="logonLogin" type="submit" value="login" onClick="loginUser()"/>
+        <input id="logon" type="submit" value="login" onClick="storeUserLocal()"/>
+        <input id="logonLogin" type="button" value="test" onClick="loginUser()"/>
+
     </form>
     <br>
     <h2 style="text-align: center;">Opret Bruger</h2>
