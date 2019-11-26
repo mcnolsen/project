@@ -70,7 +70,26 @@ h1 {
     float: left;
 
 }
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    width: 16%;
+    float: left;
+    margin-top: -35%;
 
+}
+
+.column{
+    flex:10%
+    padding:1%;
+}
+
+.column img{
+    margin-top: 3%;
+    vertical-align: left;
+    width: 49%;
+}
 .footer {
     width: 100%;
     background-color: cadetblue;
@@ -80,6 +99,7 @@ h1 {
     bottom: 0;
     position: fixed;
     color: white;
+    display: table;
 
 }
 .footer a {
@@ -88,16 +108,13 @@ h1 {
 }
 
 .footer a:hover {
-    color: blue;
+    color: royalblue;
 }
 
-.footer-element1 {
-    float: left;
-    padding-left: 10%
-}
+.footer-element {
+    width: 30%;
+    padding-left:0%;
+    display: table-cell;
 
-.footer-element2 {
-    padding-left: 40%;
 }
-
 
