@@ -6,7 +6,9 @@
     padding: 0;
     padding-left: 32%;
     position: sticky;
+    top:0;
     position: -webkit-sticky; /* Til safari brugere*/
+
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
