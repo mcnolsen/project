@@ -4,7 +4,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-left: 12%;
+    padding-left: 32%;
     position: sticky;
     position: -webkit-sticky; /* Til safari brugere*/
 }
@@ -61,8 +61,8 @@ h1 {
 }
 
 .logoBillede {
-    width: 7%;
-    height: 7%;
+    width: 19%;
+    height: 19%;
     float: left;
 }
 
