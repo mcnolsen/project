@@ -35,7 +35,8 @@ p {
 .fb-page {
     float: right;
     height: 100%;
-    width: 300px;
+    width: 270px;
+    z-index: -1;
 }
 
 .center-text {
@@ -66,6 +67,7 @@ h1 {
     width: 19%;
     height: 19%;
     float: left;
+
 }
 
 .footer {
