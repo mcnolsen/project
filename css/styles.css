@@ -8,6 +8,7 @@
     position: sticky;
     top:0;
     position: -webkit-sticky; /* Til safari brugere*/
+    z-index: 1;
 
 }
 p {
@@ -36,7 +37,7 @@ p {
     float: right;
     height: 100%;
     width: 19%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .center-text {
