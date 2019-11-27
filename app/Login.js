@@ -35,6 +35,7 @@ function registerUser(){
         tlfNumber: "",
         email: ""
         })
+    storeUserLocal();
 }
 function storeUserLocal(){
     //Få items fra localStorage og læg dem i currentStorage, hvis der er brugere i localStorage
@@ -44,10 +45,15 @@ function storeUserLocal(){
         }
     }
     else {
+        console.log("Nothing in localstorage");
         //ikke noget
     }
     //merger userDataArray med currentStorage
-    var storageUpdated = userDataArray.concat(currentStorage);
+    var nonfilterstorageUpdated = userDataArray.concat(currentStorage);
+    //Inspiration https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+    var storageUpdated = nonfilterstorageUpdated.filter (function (el) {
+        return el != null;
+    });
     //Sorterer duplicates i forhold til deres userID.
     storageUpdated.sort(function (a,b) {
         if (a.username > b.username){
@@ -63,7 +69,7 @@ function storeUserLocal(){
     // Splice inspiration : https://www.viralpatel.net/javascript-array-remove-element-js-array-delete-element/
     function spliceStorageUpdated(array, username){
         for (counts = 0; counts < array.length; counts++){
-            if (array[counts].username = username){
+            if (array[counts].username == username){
                 array.splice(counts, 1);
                 break;
             }
@@ -81,7 +87,7 @@ function storeUserLocal(){
         else {
         }
     }
-
+    console.log(storageUpdated);
     //Gøres til en string og sendes til localstorage
     var strJSON = JSON.stringify(storageUpdated);
     localStorage.setItem(storageUpdated.userID, strJSON);
@@ -94,7 +100,7 @@ function loginUser() {
             var currentUsers = JSON.parse(localStorage.getItem(localStorage.key(i)));
             for (counter = 0; currentUsers.length > counter; counter++){
                 loginUserCheck(currentUsers, currentUsers[counter].username, currentUsers[counter].password);
-                if (loginUserCheck){
+                if (loginUserCheck == true){
                     console.log("Login Succesful");
                     break;
                 }
@@ -110,30 +116,40 @@ function loginUser() {
 }
 
 function loginUserCheck(array, username, password) {
-    console.log(username);
+    var usernameCheck = document.getElementById("userLogin").value;
+    var passwordCheck = document.getElementById("passwordLogin").value;
+    console.log(usernameCheck);
     console.log(array);
-    console.log(password);
-    var usernameCheck = document.getElementById("userLogin");
-    var passwordCheck = document.getElementById("passwordLogin");
-    if (username != ""){
+    console.log(passwordCheck);
+    if (usernameCheck !== ""){
         for (count = 0; array.length > count; count++){
-            if (username = usernameCheck){
-                if (password = passwordCheck){
+            if (username === usernameCheck){
+                if (password === passwordCheck && passwordCheck !== "") {
+                    checkSessionStorage(usernameCheck);
                     return true;
                 }
                 else {
-                    alert("Wrong Password");
+                    return false;
                 }
             }
             else {
-                console.log("ok")
+                return false;
             }
         }
-
         }
     else {
-        console.log("We at that last stop")
         return false;
+    }
+}
+
+// nu check sessionStorage og hvis ikke logged ind, så add brugernavnet til session storage
+function checkSessionStorage(username) {
+    console.log(username);
+    if (sessionStorage.length > 0) {
+        console.log("All ready logged in")
+    }
+    else {
+        sessionStorage.setItem("1", username);
     }
 }
 

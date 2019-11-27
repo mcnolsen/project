@@ -35,9 +35,10 @@
     <br>
     <h3 style="margin-bottom: 2%; text-align: center;">Login form</h3>
     <form id="login-form" style="margin: auto; text-align: center;">
-        <input id="userLogin" type="username" placeholder="Enter username here" value=""/>
-        <input id="passwordLogin" type="password" placeholder="Enter password here" value=""/>
-        <input id="logon" type="submit" value="login" onClick="storeUserLocal()"/>
+        <input id="userLogin" type="username" placeholder="Enter username here" required>
+        <input id="passwordLogin" type="password" placeholder="Enter password here" required>
+        // Lav til submit i stedet for button og skift onClick til onSubmit
+        <input id="logon" type="button" value="login" onClick="loginUser()"/>
         <input id="logonLogin" type="button" value="test" onClick="loginUser()"/>
 
     </form>
@@ -45,16 +46,16 @@
     <h2 style="text-align: center;">Opret Bruger</h2>
     <form class id="register-form" style="margin: auto; text-align: center;">
         <p><b>Username</b></p>
-        <input id="userRegister" type="username" placeholder="Enter username here" value=""/>
+        <input id="userRegister" type="username" placeholder="Enter username here" value="" required>
         <p><b>Password</b></p>: <a class="demo-text"></a>
-        <input id="passwordRegister" type="password" placeholder="Enter password here" value=""/>
+        <input id="passwordRegister" type="password" placeholder="Enter password here" value="" required>
         <p><b>Admin?</b></p>
         <select id ="adminRegister" name="admin">
             <option value="false">Nej</option>
             <option value="true">Ja</option>
         </select>
         <br><br>
-        <input id="register" type="button" value="register" onClick="checkUser()"/>
+        <input id="register" type="submit" value="register" onClick="checkUser()"/>
     </form>
 </div>
 
