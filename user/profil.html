@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Profil</title>
     <link rel="stylesheet" href="../css/user-styles.css">
+    <script src="../app/Login.js"></script>
+    <script src="../app/Profil.js"></script>
+
 </head>
-<body>
+<body onload="loggedInCheck()">
 <ul class="navbar">
     <li class="navbar-li">
         <a class="nav-item" href="../user/arrangementer.html">Arrangementer</a>
@@ -19,15 +22,15 @@
     <li class="navbar-li">
         <a class="nav-item" href="../user/profil.html">Profil</a>
     </li>
+
     <li class="navbar-li">
-        <a class="nav-item" href="opret-bruger.html">Opret Bruger</a>
-    </li>
-    <li class="navbar-li">
-        <a class="nav-item" href="logout.html">Logout</a>
+        <a class="nav-item" href="logout.html">Log Ud</a>
     </li>
 </ul>
 <div class="center-text">
     <h1>Profil</h1>
+    <a>Skift password: </a><input id="newPassword" value=""> <button onClick="changePassword()">Skift Password</button> <br>
+    <a>Skift email: </a><input id="newEmail" value=""> <button onClick="changeEmail()">Skift Email</button>
 </div>
 </body>
 </html>

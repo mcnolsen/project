@@ -34,7 +34,7 @@ function registerUser(){
         admin: document.getElementById("adminRegister").value,
         tlfNumber: "",
         email: ""
-        })
+        });
     storeUserLocal();
 }
 function storeUserLocal(){
@@ -105,22 +105,17 @@ function loginUser() {
                     break;
                 }
                 else {
-                    console.log("Fuck off");
                 }
             }
         }
     }
     else {
-        alert("User not found");
     }
 }
 
 function loginUserCheck(array, username, password) {
     var usernameCheck = document.getElementById("userLogin").value;
     var passwordCheck = document.getElementById("passwordLogin").value;
-    console.log(usernameCheck);
-    console.log(array);
-    console.log(passwordCheck);
     if (usernameCheck !== ""){
         for (count = 0; array.length > count; count++){
             if (username === usernameCheck){
@@ -129,6 +124,7 @@ function loginUserCheck(array, username, password) {
                     return true;
                 }
                 else {
+                    document.getElementById("passText").innerHTML = "Wrong password";
                     return false;
                 }
             }
@@ -136,8 +132,9 @@ function loginUserCheck(array, username, password) {
                 return false;
             }
         }
-        }
+    }
     else {
+        document.getElementById("passText").innerHTML = "Please enter a password";
         return false;
     }
 }
@@ -146,10 +143,24 @@ function loginUserCheck(array, username, password) {
 function checkSessionStorage(username) {
     console.log(username);
     if (sessionStorage.length > 0) {
-        console.log("All ready logged in")
+        document.getElementById("passText").innerHTML = "Silly you. Du er allerede logged ind. <a href='../user/profil.html'>Klik her</a>";
+
     }
     else {
-        sessionStorage.setItem("1", username);
+        sessionStorage.setItem(username, username);
+    }
+}
+
+function logOut(){
+    sessionStorage.clear();
+}
+
+function loggedInCheck() {
+    if (sessionStorage.length > 0) {
+        return true;
+    }
+    else {
+        window.location.href = "../user/login.html";
     }
 }
 
