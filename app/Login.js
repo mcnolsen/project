@@ -6,7 +6,7 @@ var userDataArray = [{
     tlfNumber: "",
     email: ""
 }];
-//Looper over alle usernames. Tjekker om username eksisterer i arrayet.
+//Looper over alle usernames. Tjekker om username eksisterer i storage.
 function checkUser(){
     for (i = 0; i < localStorage.length; i++) {
         var currentStorage = JSON.parse(localStorage.getItem(localStorage.key(i)));
