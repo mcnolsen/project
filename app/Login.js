@@ -8,9 +8,12 @@ var userDataArray = [{
 }];
 //Looper over alle usernames. Tjekker om username eksisterer i arrayet.
 function checkUser(){
-    var userExist = 0;
-    for (y = 0; y < userDataArray.length; y++) {
-        if (userDataArray[y].username == document.getElementById( "userRegister").value) {
+    for (i = 0; i < localStorage.length; i++) {
+        var currentStorage = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    }
+    var userExist = false;
+    for (y = 0; y < currentStorage.length; y++) {
+        if (currentStorage[y].username === document.getElementById( "userRegister").value) {
             var userExist = true;
             break;
         }
@@ -20,7 +23,7 @@ function checkUser(){
     }
     //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
     if (userExist) {
-        alert('Username exists')
+        alert('Username exists');
     }
     else {
         registerUser();
