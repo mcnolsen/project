@@ -98,7 +98,6 @@ function storeUserLocal(){
         else {
         }
     }
-    console.log(storageUpdated);
     //Gøres til en string og sendes til localstorage
     var strJSON = JSON.stringify(storageUpdated);
     localStorage.setItem(storageUpdated.userID, strJSON);
