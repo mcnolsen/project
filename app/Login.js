@@ -8,12 +8,14 @@ var userDataArray = [{
 }];
 //Looper over alle usernames. Tjekker om username eksisterer i storage.
 function checkUser(){
+    var usernameRegistration = document.getElementById( "userRegister").value;
+    var passwordRegistration = document.getElementById("passwordRegister").value;
     for (i = 0; i < localStorage.length; i++) {
         var currentStorage = JSON.parse(localStorage.getItem(localStorage.key(i)));
     }
     var userExist = false;
     for (y = 0; y < currentStorage.length; y++) {
-        if (currentStorage[y].username === document.getElementById( "userRegister").value) {
+        if (currentStorage[y].username === usernameRegistration) {
             var userExist = true;
             break;
         }
@@ -22,11 +24,17 @@ function checkUser(){
         }
     }
     //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
-    if (userExist) {
-        alert('Username exists');
+    if (passwordRegistration !== ""){
+        if (userExist) {
+            document.getElementById("passRegText").innerHTML = "Username is already taken";
+        }
+        else {
+            registerUser();
+            document.getElementById("passRegText").innerHTML = "User registered";
+        }
     }
     else {
-        registerUser();
+        document.getElementById("passRegText").innerHTML = "Please enter a password";
     }
 }
 
