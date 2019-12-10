@@ -101,7 +101,7 @@ function storeUserLocal(){
     //Gøres til en string og sendes til localstorage
     var strJSON = JSON.stringify(storageUpdated);
     localStorage.setItem(storageUpdated.userID, strJSON);
-
+    return storageUpdated;
 }
 
 function loginUser() {
