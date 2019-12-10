@@ -1,5 +1,34 @@
+function localstorage(id) {
+    if (localStorage.getItem(id) == null) { //if-statementen får at dersom id'en ikke eksisterer i localstorage skal den bli lagt til
+        localStorage.setItem(id, 1);
+
+        alert("Du har booket " + id); //gir ut en alert som skal informere brukeren om at boardet er booket
+    }
+    else {
+        alert("Beklager! Bordet er allerede booket") ;
+    }
+}
+
+function clearLocalStorage1 (){
+    window.localStorage.removeItem("board-1");
+    alert("Du har nå avbrutt din booking");
+}
+function clearLocalStorage2 (){
+    window.localStorage.removeItem("board-2");
+    alert("Du har nå avbrutt din booking");
+}
+
+function clearLocalStorage3 () {
+    window.localStorage.removeItem("board-3");
+    alert("Du har nå avbrutt din booking");
+}
+function clearLocalStorage4 () {
+    window.localStorage.removeItem("board-4");
+    alert("Du har nå avbrutt din booking");
+}
 
 
+/*
 function myFunction() {
 
     var board = document.getElementById("minSelectBoard").value;
@@ -13,7 +42,7 @@ function myFunction() {
 var items = [{name:"board 1"}, {name:"board 2"}, {name: "board 3"}, {name: "board 4"}]
 
 
-//window.localStorage.setItem("items", items)
+// window.localStorage.setItem("items", items)
 
 function checkAvailability(){
     for (item in window.localStorage.getItem("items")){
@@ -23,3 +52,19 @@ function checkAvailability(){
         alert ("available")
     }
 }
+
+function localstorage (id) {
+    if (!window.localStorage.getItem(id)) {
+        window.localStorage.setItem(id)
+    } else {
+        window.localStorage.setItem(id, 1 + parseInt(window.localStorage.getItem(id)))
+    }
+}
+ */
+
+
+/*
+function clearLocalStorage(id){
+    window.localStorage.removeItem(id);
+}
+*/
