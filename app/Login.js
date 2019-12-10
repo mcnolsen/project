@@ -6,11 +6,16 @@ var userDataArray = [{
     tlfNumber: "",
     email: ""
 }];
-//Looper over alle usernames. Tjekker om username eksisterer i arrayet.
+//Looper over alle usernames. Tjekker om username eksisterer i storage.
 function checkUser(){
-    var userExist = 0;
-    for (y = 0; y < userDataArray.length; y++) {
-        if (userDataArray[y].username == document.getElementById( "userRegister").value) {
+    var usernameRegistration = document.getElementById( "userRegister").value;
+    var passwordRegistration = document.getElementById("passwordRegister").value;
+    for (i = 0; i < localStorage.length; i++) {
+        var currentStorage = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    }
+    var userExist = false;
+    for (y = 0; y < currentStorage.length; y++) {
+        if (currentStorage[y].username === usernameRegistration) {
             var userExist = true;
             break;
         }
@@ -19,11 +24,17 @@ function checkUser(){
         }
     }
     //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
-    if (userExist) {
-        alert('Username exists')
+    if (passwordRegistration !== ""){
+        if (userExist) {
+            document.getElementById("passRegText").innerHTML = "Username is already taken";
+        }
+        else {
+            registerUser();
+            document.getElementById("passRegText").innerHTML = "User registered";
+        }
     }
     else {
-        registerUser();
+        document.getElementById("passRegText").innerHTML = "Please enter a password";
     }
 }
 
@@ -87,11 +98,10 @@ function storeUserLocal(){
         else {
         }
     }
-    console.log(storageUpdated);
     //Gøres til en string og sendes til localstorage
     var strJSON = JSON.stringify(storageUpdated);
     localStorage.setItem(storageUpdated.userID, strJSON);
-
+    return storageUpdated;
 }
 
 function loginUser() {
