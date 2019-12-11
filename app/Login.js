@@ -26,15 +26,15 @@ function checkUser(){
     //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
     if (passwordRegistration !== ""){
         if (userExist) {
-            document.getElementById("passRegText").innerHTML = "Username is already taken";
+            document.getElementById("passRegText").innerHTML = "Brugernavnet er allerede i brug";
         }
         else {
             registerUser();
-            document.getElementById("passRegText").innerHTML = "User registered";
+            document.getElementById("passRegText").innerHTML = "Bruger registreret";
         }
     }
     else {
-        document.getElementById("passRegText").innerHTML = "Please enter a password";
+        document.getElementById("passRegText").innerHTML = "Venligst indtast et password";
     }
 }
 
@@ -133,18 +133,18 @@ function loginUserCheck(array, username, password) {
                     return true;
                 }
                 else {
-                    document.getElementById("passText").innerHTML = "Wrong password";
+                    document.getElementById("passText").innerHTML = "Forkert password";
                     return false;
                 }
             }
             else {
-                document.getElementById("passText").innerHTML = "No user with that username.";
+                document.getElementById("passText").innerHTML = "Ingen bruger med det brugernavn";
                 return false;
             }
         }
     }
     else {
-        document.getElementById("passText").innerHTML = "Please enter a username";
+        document.getElementById("passText").innerHTML = "Indtast venligst et brugernavn";
         return false;
     }
 }
@@ -152,7 +152,7 @@ function loginUserCheck(array, username, password) {
 // nu check sessionStorage og hvis ikke logged ind, så add brugernavnet til session storage
 function checkSessionStorage(username) {
     if (sessionStorage.length > 0) {
-        document.getElementById("passText").innerHTML = "Silly you. Du er allerede logged ind. <a href='../user/profil.html'>Klik her</a>";
+        document.getElementById("passText").innerHTML = "Du er allerede logget ind. <a href='../user/profil.html'>Klik her</a>";
 
     }
     else {
