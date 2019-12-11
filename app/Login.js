@@ -156,6 +156,7 @@ function checkSessionStorage(username) {
     }
     else {
         sessionStorage.setItem(username, username);
+        window.location.href = "../user/profil.html";
     }
 }
 
