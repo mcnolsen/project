@@ -138,7 +138,6 @@ function loginUserCheck(array, username, password) {
                 }
             }
             else {
-                document.getElementById("passText").innerHTML = "Ingen bruger med det brugernavn";
                 return false;
             }
         }

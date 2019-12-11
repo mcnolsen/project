@@ -1,3 +1,4 @@
+// Tjekker om brugeren som er logged ind er admin
 function adminCheck() {
     var userNow = sessionStorage.key(0);
     for (i = 0; i < localStorage.length; i++) {
@@ -21,7 +22,7 @@ function adminCheck() {
         window.location.replace("../user/profil.html")
     }
 }
-
+// Laver tabel med alle brugere
 function tableDraw(){
     var table = document.createElement("table");
     var userData = storeUserLocal();
@@ -37,7 +38,6 @@ function tableDraw(){
         cell3.innerHTML = userData[count].admin;
         cell2.innerHTML = userData[count].tlfNumber;
         cell1.innerHTML = userData[count].email;
-
     }
     var header = table.createTHead();
     var rowHeader = header.insertRow(0);
