@@ -56,12 +56,11 @@ function storeUserLocal(){
         }
     }
     else {
-        console.log("Nothing in localstorage");
-        //ikke noget
     }
     //merger userDataArray med currentStorage
     var nonfilterstorageUpdated = userDataArray.concat(currentStorage);
     //Inspiration https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+    //Laver et nyt array uden tomme elementer/brugere
     var storageUpdated = nonfilterstorageUpdated.filter (function (el) {
         return el != null;
     });
