@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calendar</title>
+    <title>Vores arrangementer</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/user-styles.css">
-    <script src="../app/Login.js"></script>
 
 </head>
 <body onload="loggedInCheck()">
 
 <ul class="navbar">
     <li class="navbar-li">
-        <a class="nav-item" href="../user/arrangementer.html">Arrangementer</a>
+        <a class="nav-item" href="kalender.html">Arrangementer</a>
     </li>
     <li class="navbar-li">
         <a class="nav-item" href="../user/book-board.html">Book Board</a>
@@ -30,13 +28,11 @@
     <li class="navbar-li">
         <a class="nav-item" href="../user/admin.html">Admin</a>
     </li>
+
     <li class="navbar-li">
         <a class="nav-item" href="logout.html">Log Ud</a>
     </li>
 </ul>
-<div class="center-text">
-    <h1>Vores arrangementer</h1>
-</div>
 
 
 <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
@@ -45,13 +41,13 @@
         <table class="table table-bordered table-responsive-sm" id="calendar">
             <thead>
             <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
+                <th>Søn</th>
+                <th>Man</th>
+                <th>Tir</th>
+                <th>Ons</th>
+                <th>Tor</th>
+                <th>Fre</th>
+                <th>Lør</th>
             </tr>
             </thead>
 
@@ -62,9 +58,9 @@
 
         <div class="form-inline">
 
-            <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+            <button class="btn btn-outline-primary col-sm-6" id="Forrige" onclick="previous()">Forrige</button>
 
-            <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+            <button class="btn btn-outline-primary col-sm-6" id="Næste" onclick="next()">Næste</button>
         </div>
         <br/>
         <form class="form-inline">
@@ -87,6 +83,9 @@
 
             <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
 
+            <option value=2016>2016</option>
+            <option value=2017>2017</option>
+            <option value=2018>2018</option>
             <option value=2019>2019</option>
             <option value=2020>2020</option>
             <option value=2021>2021</option>
@@ -99,7 +98,15 @@
     </div>
 </div>
 <!--<button name="jump" onclick="jump()">Go</button>-->
-<script src="Arrangement.js"></script>
+<script src="kalender.js"></script>
+
+<a href="/project/index.html">
+    <img src="/project/img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
+</a>
+
+<link rel="stylesheet" href="../css/user-styles.css">
+
+
 
 </body>
 </html>
