@@ -64,7 +64,7 @@ function storeUserLocal(){
     var storageUpdated = nonfilterstorageUpdated.filter (function (el) {
         return el != null;
     });
-    //Sorterer duplicates i forhold til deres userID.
+    //Sorterer duplicates i forhold til deres username.
     storageUpdated.sort(function (a,b) {
         if (a.username > b.username){
             return 1;
