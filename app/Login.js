@@ -42,7 +42,7 @@ function registerUser(){
     userDataArray.push({
         username: document.getElementById( "userRegister").value,
         password: document.getElementById("passwordRegister").value,
-        admin: document.getElementById("adminRegister").value,
+        admin: false,
         tlfNumber: "",
         email: ""
         });
@@ -107,10 +107,10 @@ function loginUser() {
     if (localStorage.length > 0) {
         for (i = 0; i < localStorage.length; i++) {
             var currentUsers = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            //
             for (counter = 0; currentUsers.length > counter; counter++){
                 loginUserCheck(currentUsers, currentUsers[counter].username, currentUsers[counter].password);
                 if (loginUserCheck == true){
-                    console.log("Login Succesful");
                     break;
                 }
                 else {
@@ -138,19 +138,19 @@ function loginUserCheck(array, username, password) {
                 }
             }
             else {
+                document.getElementById("passText").innerHTML = "No user with that username.";
                 return false;
             }
         }
     }
     else {
-        document.getElementById("passText").innerHTML = "Please enter a password";
+        document.getElementById("passText").innerHTML = "Please enter a username";
         return false;
     }
 }
 
 // nu check sessionStorage og hvis ikke logged ind, så add brugernavnet til session storage
 function checkSessionStorage(username) {
-    console.log(username);
     if (sessionStorage.length > 0) {
         document.getElementById("passText").innerHTML = "Silly you. Du er allerede logged ind. <a href='../user/profil.html'>Klik her</a>";
 
