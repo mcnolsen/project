@@ -26,15 +26,15 @@ function checkUser(){
     //Bestemmer hvad der skal ske alt efter om usernamet eksisterer eller ej
     if (passwordRegistration !== ""){
         if (userExist) {
-            document.getElementById("passRegText").innerHTML = "Username is already taken";
+            document.getElementById("passRegText").innerHTML = "Brugernavnet er allerede i brug";
         }
         else {
             registerUser();
-            document.getElementById("passRegText").innerHTML = "User registered";
+            document.getElementById("passRegText").innerHTML = "Bruger registreret";
         }
     }
     else {
-        document.getElementById("passRegText").innerHTML = "Please enter a password";
+        document.getElementById("passRegText").innerHTML = "Venligst indtast et password";
     }
 }
 
@@ -42,7 +42,7 @@ function registerUser(){
     userDataArray.push({
         username: document.getElementById( "userRegister").value,
         password: document.getElementById("passwordRegister").value,
-        admin: document.getElementById("adminRegister").value,
+        admin: false,
         tlfNumber: "",
         email: ""
         });
@@ -56,16 +56,15 @@ function storeUserLocal(){
         }
     }
     else {
-        console.log("Nothing in localstorage");
-        //ikke noget
     }
     //merger userDataArray med currentStorage
     var nonfilterstorageUpdated = userDataArray.concat(currentStorage);
     //Inspiration https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+    //Laver et nyt array uden tomme elementer/brugere
     var storageUpdated = nonfilterstorageUpdated.filter (function (el) {
         return el != null;
     });
-    //Sorterer duplicates i forhold til deres userID.
+    //Sorterer duplicates i forhold til deres username.
     storageUpdated.sort(function (a,b) {
         if (a.username > b.username){
             return 1;
@@ -108,10 +107,10 @@ function loginUser() {
     if (localStorage.length > 0) {
         for (i = 0; i < localStorage.length; i++) {
             var currentUsers = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            //
             for (counter = 0; currentUsers.length > counter; counter++){
                 loginUserCheck(currentUsers, currentUsers[counter].username, currentUsers[counter].password);
                 if (loginUserCheck == true){
-                    console.log("Login Succesful");
                     break;
                 }
                 else {
@@ -134,7 +133,7 @@ function loginUserCheck(array, username, password) {
                     return true;
                 }
                 else {
-                    document.getElementById("passText").innerHTML = "Wrong password";
+                    document.getElementById("passText").innerHTML = "Forkert password";
                     return false;
                 }
             }
@@ -144,20 +143,20 @@ function loginUserCheck(array, username, password) {
         }
     }
     else {
-        document.getElementById("passText").innerHTML = "Please enter a password";
+        document.getElementById("passText").innerHTML = "Indtast venligst et brugernavn";
         return false;
     }
 }
 
 // nu check sessionStorage og hvis ikke logged ind, så add brugernavnet til session storage
 function checkSessionStorage(username) {
-    console.log(username);
     if (sessionStorage.length > 0) {
-        document.getElementById("passText").innerHTML = "Silly you. Du er allerede logged ind. <a href='../user/profil.html'>Klik her</a>";
+        document.getElementById("passText").innerHTML = "Du er allerede logget ind. <a href='../user/profil.html'>Klik her</a>";
 
     }
     else {
         sessionStorage.setItem(username, username);
+        window.location.href = "../user/profil.html";
     }
 }
 
