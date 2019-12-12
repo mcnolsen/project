@@ -11,7 +11,6 @@ function changePassword () {
         return user.username === userLoggedIn;
     });
     findUser.password = password;
-    console.log(currentStorage);
     var string = JSON.stringify(currentStorage);
     localStorage.setItem(currentStorage.userID, string);
 }
@@ -29,7 +28,6 @@ function changeEmail () {
         return user.username === userLoggedIn;
     });
     findUser.email = email;
-    console.log(currentStorage);
     var string = JSON.stringify(currentStorage);
     localStorage.setItem(currentStorage.userID, string);
 }
