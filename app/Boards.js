@@ -1,29 +1,29 @@
 function localstorage(id) {
-    if (localStorage.getItem(id) == null) { //if-statementen får at dersom id'en ikke eksisterer i localstorage skal den bli lagt til
-        localStorage.setItem(id, 1);
+    if (localStorage.getItem(id) == null) {//skjekker om id'en ikke eksisterer i localStorage
+        localStorage.setItem(id, 1); //.setItem legger til id i localstorage
 
-        alert("Du har booket " + id); //gir ut en alert som skal informere brukeren om at boardet er booket
-    }
+        alert("Du har booket " + id);
+    }//gir ut en alert som skal informere brukeren om at boardet er booket
     else {
         alert("Beklager! Bordet er allerede booket") ;
-    }
+    } //else gjør at hvis id'en eksiterer i localstorage er det ikke mulig å legge til
 }
 
 function clearLocalStorage1 (){
-    window.localStorage.removeItem("board-1");
+    localStorage.removeItem("board-1");
     alert("Du har nå avbrutt din booking");
 }
 function clearLocalStorage2 (){
-    window.localStorage.removeItem("board-2");
+    localStorage.removeItem("board-2");
     alert("Du har nå avbrutt din booking");
 }
 
 function clearLocalStorage3 () {
-    window.localStorage.removeItem("board-3");
+    localStorage.removeItem("board-3");
     alert("Du har nå avbrutt din booking");
 }
 function clearLocalStorage4 () {
-    window.localStorage.removeItem("board-4");
+    localStorage.removeItem("board-4");
     alert("Du har nå avbrutt din booking");
 }
 
