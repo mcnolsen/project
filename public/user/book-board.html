@@ -9,7 +9,7 @@
 <body onload="loggedInCheck()">
 <ul class="navbar">
     <li class="navbar-li">
-        <a class="nav-item" href="../user/arrangementer.html">Arrangementer</a>
+        <a class="nav-item" href="kalender.html">Arrangementer</a>
     </li>
     <li class="navbar-li">
         <a class="nav-item" href="../user/book-board.html">Book Board</a>
@@ -19,6 +19,9 @@
     </li>
     <li class="navbar-li">
         <a class="nav-item" href="../user/profil.html">Profil</a>
+    </li>
+    <li class="navbar-li">
+        <a class="nav-item" href="../user/admin.html">Admin</a>
     </li>
     <li class="navbar-li">
         <a class="nav-item" href="logout.html">Log Ud</a>
@@ -99,6 +102,29 @@
     <br>
     <input id="btn1" type="button"  onclick="myFunction()" value="Book board">
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Velg ditt brett:</p>
+    <input type="button" id="board-1" value="Book board 1" onclick="localstorage(id)">
+    <input type="button" id="remove1" value="Cancel booking" onclick="clearLocalStorage1()">
+    <br>
+    <br>
+    <input type="button" id="board-2" value="Book board 2" onclick="localstorage(id)">
+    <input type="button" id="remove2" value="Cancel booking" onclick="clearLocalStorage2()">
+    <br>
+    <br>
+    <input type="button" id="board-3" value="Book board 3" onclick="localstorage(id)">
+    <input type="button" id="remove3" value="Cancel booking" onclick="clearLocalStorage3()">
+    <br>
+    <br>
+    <input type="button" id="board-4" value="Book board 4" onclick="localstorage(id)">
+    <input type="button" id="remove4" value="Cancel booking" onclick="clearLocalStorage4()">
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 
 </body>
