@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Board</title>
+    <link rel="stylesheet" href="../css/user-styles.css">
+    <script src="app/date.js"></script>
+</head>
+<body onload="urlParameters();">
+    <% if (userType === 'admin') { %>
+        <%- include ('adminNav.ejs') %>
+    <% } else { %>
+        <%- include ('nav.ejs') %>
+    <% } %>
+<div class="center-text">
+    <div class="errors">
+        <% if (messages) { %>
+            <%= messages.error %> 
+           <% } %>
+    </div>
+    <div class="success">
+        <% if (messages) { %>
+            <%= messages.success %> 
+           <% } %>
+    </div>
+    <form action="/user/book-board" method="post">
+        <a>Board:</a>
+        <select id="board" name="id" onchange="changeUrl()">
+            <!-- Tager fra databasen via boards arrayet som bliver passet med get requesten-->
+            <% for( let count = 0; count < boards.length; count++ ) { %>
+                <% if (boards[count].activated == true) { %>
+                    <option value="<%= boards[count]._id %>"> <%= boards[count].name %> </option>
+                    <% } %>
+            <% } %>
+        </select>
+        <label for="start">Dato:</label>
+        <input type="date" id="date" name="date" value="" min="" max=""  onchange="changeUrl()">
+        <select id="" name="time">
+            <% for( let count = 0; count < times.length; count++ ) { %>
+                <option value="<%= times[count] %>"> <%= times[count] %>.00 </option>
+            <% } %>
+        </select>
+        <button type="submit">Book</button>
+    </form>
+</div>
+
+</body>
+</html>

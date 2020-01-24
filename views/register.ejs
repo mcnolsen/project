@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret Bruger</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../app/Login.js"></script>
+
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+    <a href="../index.html">
+        <img src="../img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
+    </a>
+
+<div class="center-text">
+<h1 style="text-align: center;">Opret Bruger</h1>
+<div class="errors">
+<% if (messages) { %>
+    <%= messages.error %>
+    <% } %>
+</div>
+    <form class id="register-form" style="margin: auto; text-align: center;" action="/register" method="post">
+        <p><b>Username</b></p>
+        <input id="username" type="text" placeholder="Enter username here"  name="username" required/>
+        <p><b>Email</b></p>
+        <input id="email" type="email" placeholder="Enter email here" name="email" required/>
+        <p><b>Password</b></p>
+        <input id="password" type="password" placeholder="Enter password here" name="password" required/>
+        <br><br>
+        <p><b>Confirm password</b></p>
+        <input id="password2" type="password" placeholder="Enter password here" name="password2" required/>
+        <br><br>
+        <input id="register" type="submit" value="register"/>
+    </form>
+</div>
+</body>
+</html>

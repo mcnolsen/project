@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../css/user-styles.css">
+    <script src="../app/Login.js"></script>
+    <script src="../app/Profil.js"></script>
+
+</head>
+<body>
+    <% if (userType === 'admin') { %>
+        <%- include ('adminNav.ejs') %>
+    <% } else { %>
+        <%- include ('nav.ejs') %>
+    <% } %>
+<div class="center-text">
+    <h1>Dashboard</h1>
+    <a>Velkommen tilbage </a><b><%= username %></b>
+    <div id="errors" class="errors">
+        <% if (messages) { %>
+            <%= messages.error %>
+           <% } %>
+    </div>
+
+</div>
+</body>
+</html>

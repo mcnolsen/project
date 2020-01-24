@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reglement</title>
+    <link rel="stylesheet" href="../css/user-styles.css">
+    <script src="../app/Login.js"></script>
+
+</head>
+<body>
+    <% if (userType === 'admin') { %>
+        <%- include ('adminNav.ejs') %>
+    <% } else { %>
+        <%- include ('nav.ejs') %>
+    <% } %>
+<div class="center-text">
+    <h1>Reglement</h1>
+    <p class="p">TekstTekstTekstTekstTekstTekstTekstTekst</p>
+</div>
+</body>
+</html>

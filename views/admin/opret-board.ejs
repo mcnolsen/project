@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/user-styles.css">
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+<div class="center-text">
+    <div class="errors">    
+        <% if (messages) { %>
+        <%= messages.error %>
+       <% } %>
+    </div>
+    <div class="success">
+        <% if (messages) { %>
+            <%= messages.success %>
+        <% } %>
+    </div>
+    <form action="/admin/opret-board" method="post">
+        <input placeholder="Boardnavn" name="name">
+        <input placeholder="Board beskrivelse" name="beskrivelse">
+        <button type="submit">Opret board</button>
+    </form>
+    <div class="boardTable" id="boardTable">
+
+    </div>
+</div>
+</body>
+</html>

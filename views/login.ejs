@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../app/Login.js">  </script>
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+<a href="../index.ejs">
+    <img src="../img/logo%20cmyk%20roskilde%20sup%20klub.png" alt="banner-img" class="logoBillede">
+</a>
+<div class="center-text">
+    <h1 style="text-align: center;">Login</h1>
+    <div class="errors">
+    <% if (messages) { %>
+        <%= messages.error %>
+       <% } %>
+    </div>
+    <div class="success">
+        <% if (messages) { %>
+            <%= messages.success %>
+           <% } %>
+        </div>
+    <form class id="login-form" style="margin: auto; text-align: center;" action="/login" method="post">
+        <p><b>Email</b></p>
+        <input id="email" type="email" placeholder="Enter email here" name="email" required/>
+        <p><b>Password</b></p>
+        <input id="password" type="password" placeholder="Enter password here" name="password" required/>
+        <br><br>
+        <input id="login" type="submit" value="login"/>
+    </form>
+</div>
+
+<script src="../app/app.js">  </script>
+
+<div class="row">
+
+    <div class="column">
+        <img src="../img/SponsorsWanted.jpg">
+        <img src="../img/SponsorsWanted.jpg">
+    </div>
+
+<div class="footer">
+    <div class="footer-element">
+        <h4>Roskilde SUP Klub</h4>
+        <p>Strandvejen 18, 4000 Veddelev, Roskilde, Danmark</p>
+    </div>
+    <div class="footer-element">
+        <h4>Sociale Medier</h4>
+        <p><a href="https://www.facebook.com/Roskildesupklub/">Facebook</a></p>
+    </div>
+    <div class="footer-element">
+        <h4>Dansk surf og rafting forbund</h4>
+        <p><a href="https://www.dsrf.dk/">DSFR</a></p>
+    </div>
+
+</body>
+</html>

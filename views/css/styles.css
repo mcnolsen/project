@@ -1,0 +1,163 @@
+.navbar {
+    background-color: cadetblue;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 32%;
+    position: sticky;
+    top:0;
+    position: -webkit-sticky; /* Til safari brugere*/
+    z-index: 1;
+
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar-li a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 20px 24px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0;
+}
+
+.navbar-li a:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+.navbar-li a.active {
+    background-color: black;
+    color: grey;
+}
+.fb-page {
+    float: right;
+    height: 100%;
+    width: 19%;
+    z-index: 0;
+}
+
+.center-text {
+    margin: auto;
+    padding: 1%;
+    background-color: #F1F1F1;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10%;
+}
+
+.errors {
+    text-align: center;
+    margin: auto;
+    color: red;
+}
+
+.success{
+    text-align: center;
+    margin:auto;
+    color: green;
+}
+.p {
+    text-align: left;
+    width: 60%;
+}
+
+.forsideBillede1 {
+    float: right;
+    width: 40%;
+    height: 40%;
+    padding-left: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.mail {
+    text-align: center;
+}
+
+.logoBillede {
+    width: 19%;
+    height: 19%;
+    float: left;
+
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    width: 16%;
+    float: left;
+    margin-top: -35%;
+
+}
+
+.column{
+    flex:10%;
+    padding:1%;
+}
+
+.column img{
+    margin-top: 3%;
+    vertical-align: left;
+    width: 49%;
+}
+.footer {
+    width: 100%;
+    background-color: cadetblue;
+    padding-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    color: white;
+    display: table;
+
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: royalblue;
+}
+
+.footer-element {
+    width: 30%;
+    padding-left:0%;
+    display: table-cell;
+}
+
+
+
+
+/* slideshow  */
+@keyframes slideshow {
+    10% {left: 0;}
+    20% {left: 0;}
+    30% {left: -100%;}
+    40% {left: -100%;}
+    50% {left: -200%;}
+    60% {left: -200%;}
+    70% {left: -300%;}
+    80% {left: -300%;}
+    90% {left: -400%;}
+    100% {left: -400%}
+}
+
+
+#slider{overflow:hidden;width:50%;margin:5px auto; border: 5px solid transparent;border-radius: 10px;}
+#slider figure img{width:20%;float:left;}
+#slider figure{position:relative;width:500%;margin:0;left:0;text-align:left;animation:20s slideshow infinite}
+
+@media screen and (max-width: 767px) {#slider {overflow: hidden; width: 100%; margin: 0 auto;}}
+
