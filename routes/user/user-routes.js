@@ -3,45 +3,24 @@ const app = express();
 const auth = require('../../config/auth');
 const Board = require('../../models/Board');
 const BookedBoard = require('../../models/BookedBoards');
+const sorting = require('./sortFilter');
 
 
 //User routes
 app.get('/user/arrangementer', auth.checkAuthentification, (req, res) => {
     res.render('./user/arrangementer.ejs', {userType: req.user.userType})
 })
-app.get('/user/book-board', auth.checkAuthentification, (req, res) => {
+app.get('/user/book-board', auth.checkAuthentification, async (req, res) => {
     const boardID = req.query.id;
     const date = req.query.date;
-
-    const getTimes = async () =>{
-        const chosenBoard = await Board.findById(boardID);
-        const times = [];
-        try{
-            for(count=0; count < 23; count++){
-                const foundTime = await BookedBoard.findOne({'bookedBoard': chosenBoard, 'bookedDate': date, 'bookedTime': count});
-                if (foundTime){
-                //Skal ikke pushe til arrayet med tider, hvis der er et match
-                }
-                else if (!foundTime){
-                    times.push(count);
-                }
-            }
-        }
-        catch (err) {
-            if (err) {
-                console.log(err);
-            }
-        }
-        return getRequest(times);
-    }
-    getTimes();
-    //Finder alle boards
-    const getRequest = (timeArray) =>{
+    const user = req.user;
+    const timeArray = await sorting.getTimes(boardID, date);
+    const filteredBookings = await sorting.getRequest(user);
+        //Finder alle boards
         Board.find({}, (err, boards)=>{
-            res.render('./user/book-board.ejs', {userType: req.user.userType, boards: boards, date: date, boardID: boardID, times: timeArray})
+            res.render('./user/book-board.ejs', {userType: req.user.userType, boards: boards, date: date, boardID: boardID, times: timeArray, mineBookninger: filteredBookings})
         })
-    }
-})
+    });
 app.get('/user/kalender', auth.checkAuthentification, (req, res) => {
     res.render('./user/kalender.ejs', {userType: req.user.userType})
 })

@@ -42,6 +42,33 @@
         </select>
         <button type="submit">Book</button>
     </form>
+    <div class="booked-boards">
+        <h2>Mine Bookede Boards</h2>
+        <table>
+            <tr>
+                <th>
+                   Booked Board
+                </th>
+                <th>
+                    Booked Dato
+                </th>
+                <th>
+                    Tid
+                </th>
+            </tr>
+                    <% for( let count = 0; count < mineBookninger.length; count++ ) { %>
+                        <% if (mineBookninger[count].bookedBoard !== undefined) { %>
+                        <tr>
+                            <td><%= mineBookninger[count].bookedBoard.name%></td>
+                            <!-- getMonth() +1 fordi januar = 0 ligesom i et array index-->
+                            <td><%= `${mineBookninger[count].bookedDate.getFullYear()}-${mineBookninger[count].bookedDate.getMonth()+1}-${mineBookninger[count].bookedDate.getDate()}`%></td>
+                            <td><%= mineBookninger[count].bookedTime %>.00</td>
+                        </tr> 
+                    <% } %>
+                <!-- Gider ikke bruge boards hvor navnet er undefined til noget. Disse blev lavet i test-->
+                <% } %>
+        </table>
+    </div>
 </div>
 
 </body>

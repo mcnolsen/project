@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
                 bookedTime: bookedTime
             })
             booking.save();
-            req.flash('success', `Dit board er nu booked ${bookedDate} klokken ${bookedTime}.00 til klokken ${bookedTime}.00`);
+            req.flash('success', `Dit board er nu booked d. ${bookedDate} klokken ${bookedTime}.00 til klokken ${bookedTimeInt+1}.00`);
             res.redirect('/user/book-board');
         }
     }
