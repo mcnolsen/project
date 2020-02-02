@@ -15,9 +15,24 @@
         <%- include ('nav.ejs') %>
     <% } %>
 <div class="center-text">
+    <div class="errors">
+        <% if (messages) { %>
+            <%= messages.error %> 
+           <% } %>
+    </div>
+    <div class="success">
+        <% if (messages) { %>
+            <%= messages.success %> 
+           <% } %>
+    </div>
     <h1>Profil</h1>
-    <a>Skift password: </a><input id="newPassword" value=""> <button onClick="changePassword()">Skift Password</button> <br>
-    <a>Skift email: </a><input id="newEmail" value=""> <button onClick="changeEmail()">Skift Email</button>
+    <p>Mit username: <%= username%></p>
+    <p>Min email: <%= email%></p>
+    <form action="./changePassword" method="post">
+        <a>Skift password: </a>
+        <input id="newPassword" name="newPassword" type="password" placeholder="Indtast nyt password">
+        <input id="newPasswordConfirm" name="newPasswordConfirm" type="password" placeholder="Bekræft nyt password"> 
+        <button type="submit">Skift Password</button> <br></form>
 </div>
 </body>
 </html>
