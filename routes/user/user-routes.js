@@ -3,7 +3,7 @@ const app = express();
 const auth = require('../../config/auth');
 const Board = require('../../models/Board');
 const BookedBoard = require('../../models/BookedBoards');
-const sorting = require('./sortFilter');
+const sorting = require('./app/sortFilter');
 
 
 //User routes

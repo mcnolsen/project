@@ -70,10 +70,10 @@ const adminRoutes = require('./routes/admin/admin-routes');
 app.use(adminRoutes);
 
 //Admin board oprettelse. Bruger router
-const opretBoard = require('./routes/admin/opret-board');
+const opretBoard = require('./routes/admin/app/opret-board');
 app.use('/admin/opret-board', opretBoard);
 
-const bookBoard = require ('./routes/user/book-board');
+const bookBoard = require ('./routes/user/app/book-board');
 app.use('/user/book-board', bookBoard);
 
 //Server html, css & js leverance
@@ -86,5 +86,11 @@ app.listen(PORT, () => console.log(`Initialising server on port: ${PORT}`));
 //Connection til DB. Hvis connection tager tid, så tjek username, password og om IP er whitelisted.
 mongoose.connect(process.env.DB_CONNECTION, 
     {useNewUrlParser: true, useUnifiedTopology: true},
-    () => console.log("Connection Established to DB"));
+    (err) => {
+        if (err) {
+            console.log('Unable to connect to the server. Please start the server. Error:', err);
+        } 
+        else {
+        console.log("Connection Established to DB");
+    }});
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/admin-styles.css">
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+<div class="center-text">
+    <div class="errors">
+        <% if (messages) { %>
+            <%= messages.error %> 
+           <% } %>
+    </div>
+    <div class="success">
+        <% if (messages) { %>
+            <%= messages.success %> 
+           <% } %>
+    </div>
+    <h1>Boards</h1>
+    <table>
+        <tr>
+            <th>Board Navn</th>
+            <th>Beskrivelse</th>
+            <th>Er boarded aktivt?</th>
+        </tr>
+        <% for( let index = 0; index < boards.length; index++ ) { %>
+        <tr>
+            <td value="<%= boards[index].name  %>"><%= boards[index].name %></td>
+            <td value="<%= boards[index].beskrivelse  %>"><%= boards[index].beskrivelse %></td>
+            <td value="<%= boards[index].activated  %>"><%= boards[index].activated %></td>
+        </tr>
+        <% } %>
+    </table>
+    <h2>Slet Board</h2>
+    <form action="./slet-board" method="POST">
+        <select name="boardID">
+            <% for( let index = 0; index < boards.length; index++ ) { %>
+                <option value="<%= boards[index]._id  %>"><%= boards[index].name%></option>
+                <% } %>
+        </select>
+        <button type="submit">Slet Board</button>
+    </form>
+
+    <h2>Skift Board Beskrivelse</h2>
+    <form action="./rediger-beskrivelse" method="POST">
+        <select name="boardIDBeskrivelse">
+            <% for( let index = 0; index < boards.length; index++ ) { %>
+                <option value="<%= boards[index]._id  %>"><%= boards[index].name%></option>
+                <% } %>
+        </select>
+        <textarea name="beskrivelse" placeholder="Skriv den nye beskrivelse her..."></textarea>
+        <button type="submit">Skift Beskrivelse</button>
+    </form>
+
+    <h2>Skift Board Ledighed (Aktiv/Ikke Aktiv)</h2>
+    <form action="./rediger-ledighed" method="POST">
+        <select name="boardIDLedighed">
+            <% for( let index = 0; index < boards.length; index++ ) { %>
+                <option value="<%= boards[index]._id  %>"><%= boards[index].name%></option>
+                <% } %>
+        </select>
+        <a>Skal boarded være ledigt til at bookes?</a>
+        <select name="aktivering">
+            <option value="true">Ja</option>
+            <option value="false">Nej</option>
+        </select>
+        <button type="submit">Skift ledighed</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>
