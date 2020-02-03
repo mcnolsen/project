@@ -31,10 +31,9 @@ const getRequest = (user) =>{
         return bookingSort(bookningerAlle);
     }
     const bookingSort = (mineBookninger) => {
-        //Vil kun have aktuelle boards her
+        //Vil kun have aktuelle boards her, altså de bookninger som er i dag eller efter dags dato
         let today = new Date();
-        today = new Date(today.getFullYear() + '-' + today.getMonth() + 1 + '-' +  today.getDate());
-        const filteredBookings = mineBookninger.filter(booking => booking.bookedDate > today);
+        const filteredBookings = mineBookninger.filter(booking => booking.bookedDate >= today);
         //Sortering af dato og tid
         filteredBookings.sort((a, b) => {
             if (a.bookedDate > b.bookedDate){
