@@ -13,7 +13,6 @@ router.post('/', async (req, res) => {
         const board = await Board.findById(boardID);
         const bookedTimeInt = parseInt(bookedTime);
  
-        console.log(board);
         //Tjekker board ID
         if(!boardID){
             req.flash('error', 'Det board har intet ID');
@@ -33,7 +32,7 @@ router.post('/', async (req, res) => {
             })
             booking.save();
             req.flash('success', `Dit board er nu booked d. ${bookedDate} klokken ${bookedTime}.00 til klokken ${bookedTimeInt+1}.00`);
-            res.redirect('/user/book-board');
+            res.redirect(`/user/book-board?id=${boardID}&date=${bookedDate}`);
         }
     }
     catch (err){
