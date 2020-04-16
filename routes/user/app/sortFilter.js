@@ -33,6 +33,7 @@ const getRequest = (user) =>{
     const bookingSort = (mineBookninger) => {
         //Vil kun have aktuelle boards her, altså de bookninger som er i dag eller efter dags dato
         let today = new Date();
+
         const filteredBookings = mineBookninger.filter(booking => booking.bookedDate >= today);
         //Sortering af dato og tid
         filteredBookings.sort((a, b) => {

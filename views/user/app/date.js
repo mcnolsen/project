@@ -5,7 +5,15 @@ const urlParameters = () => {
     const boardID = urlParams.get('id');
     const date = urlParams.get('date');
     const today = new Date();
-    const dateMin = today.getFullYear() + '-' + today.getMonth() + 1 + '-' +  today.getDate();
+    const month = (today.getMonth() + 1);
+    //Skal laves om så der er 0 foran måneden hvis den er under 10
+    if (month < 10){
+        var realMonth = '0' + month;
+    }
+    else {
+        var realMonth = month;
+    }
+    const dateMin = today.getFullYear() + '-' + realMonth + '-' +  today.getDate();
     document.getElementById('date').min = dateMin;
     if (date == undefined){
         //Nothing. Tvinger dem til at vælge en dato så ny get request genereres
