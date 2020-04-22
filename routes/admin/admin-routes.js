@@ -52,6 +52,7 @@ app.get('/admin/bruger-liste', auth.checkAdmin, async (req, res) => {
 })
 
 app.get('/admin/booking-liste', auth.checkAdmin, async (req, res) => {
+    //Populate for at få data fra de refererede brugere og boards. Ellers ville det bare være være ID som bliver sendt til front end
     const bookinger = await BookedBoards.find({})
     .populate({path:'bookedBy'}).populate({path:'bookedBoard'});
     res.render('admin/booking-liste.ejs', {bookinger: bookinger})
