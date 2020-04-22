@@ -54,7 +54,6 @@ app.get('/admin/bruger-liste', auth.checkAdmin, async (req, res) => {
 app.get('/admin/booking-liste', auth.checkAdmin, async (req, res) => {
     const bookinger = await BookedBoards.find({})
     .populate({path:'bookedBy'}).populate({path:'bookedBoard'});
-    console.log(bookinger)
     res.render('admin/booking-liste.ejs', {bookinger: bookinger})
 })
 module.exports = app;
