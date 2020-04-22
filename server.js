@@ -23,10 +23,10 @@ app.use(session({
     saveUninitialized: true
 }))
 
-//Connect flash
+//Connect flash call
 app.use(flash());
 
-//Middleware til flash. Kan kalde dem med messages i ejs filen
+//Middleware til flash. Kan kalde dem med messages i ejs filen globalt
 app.use(function(req, res, next){
     res.locals.messages = req.flash();
     next();

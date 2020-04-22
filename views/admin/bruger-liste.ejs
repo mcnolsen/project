@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/admin-styles.css">
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+     
+<div class="center-text">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Brugernavn</th>
+            <th>Email</th>
+            <th>Brugertype</th>
+        </tr>
+        <% for( let index = 0; index < users.length; index++ ) { %>
+        <tr>
+            <td><%= users[index]._id %></td>
+            <td><%= users[index].username %></td>
+            <td><%= users[index].email %></td>
+            <td><%= users[index].userType %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+</body>
+</html>

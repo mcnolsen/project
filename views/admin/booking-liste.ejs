@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/admin-styles.css">
+</head>
+<body>
+    <%- include ('nav.ejs') %>
+<div class="center-text">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Board navn</th>
+            <th>Dato</th>
+            <th>Tid</th>
+            <th>Bruger</th>
+        </tr>
+        <% for( let index = 0; index < bookinger.length; index++ ) { %>
+        <tr>
+            <td><%= bookinger[index]._id %></td>
+            <td><%= bookinger[index].bookedBoard.name %></td>
+            <td><%= `${bookinger[index].bookedDate.getDay()}/${bookinger[index].bookedDate.getMonth()+1}-${bookinger[index].bookedDate.getFullYear()}` %></td>
+            <td><%= bookinger[index].bookedTime %>.00</td>
+            <td><%= bookinger[index].bookedBy.username %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+</body>
+</html>

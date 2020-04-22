@@ -19,8 +19,8 @@
         <% } %>
     </div>
     <form action="/admin/opret-board" method="post">
-        <input placeholder="Boardnavn" name="name">
-        <input placeholder="Board beskrivelse" name="beskrivelse">
+        <input placeholder="Boardnavn" name="name" required>
+        <input placeholder="Board beskrivelse" name="beskrivelse" required>
         <button type="submit">Opret board</button>
     </form>
     <div class="boardTable" id="boardTable">
