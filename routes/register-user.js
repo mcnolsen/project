@@ -1,11 +1,10 @@
 const express = require('express');
-const router = express.Router();
+const app = express();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const flash = require('connect-flash');
 
-//Skal være async pga. bcrypt
-router.post('/', async (req, res) => {
+//Skal være async pga. bcrypt. Desuden også smart tidsmæssigt med hensyn til database response
+app.post('/register', async (req, res) => {
     try {
         const userEmail = await User.findOne({'email': req.body.email});
         const userUsername = await User.findOne({'username': req.body.username});
@@ -46,4 +45,4 @@ router.post('/', async (req, res) => {
         })
 
 
-module.exports = router;
+module.exports = app;

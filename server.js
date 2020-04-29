@@ -57,9 +57,9 @@ app.get('/logout', (req, res) => {
 const indexRoute = require('./routes/routes');
 app.use(indexRoute);
 
-//Import registrerings route. Pga. brugen af route i stedet for app kan vi bruge denne middleware med en anden underside, hvis vi f.eks. ville gøre så admins også kunne lave brugere.
+//Import af registreringsroute
 const registerRoute = require('./routes/register-user');
-app.use('/register', registerRoute);
+app.use(registerRoute);
 
 //User routes hvor login er required. Rendering. Skal stå under called til initializepassport, ellers kan den ikke finde ud af at den er authenticated via passport, og auth.js returnerer dig derfor til login
 const usersRoutes = require('./routes/user/user-routes');

@@ -60,7 +60,6 @@ app.post('/user/changePassword', auth.checkAuthentification, async (req, res) =>
         }
         else {
             const newPasswordHash = await bcrypt.hash(newPassword, 10);
-            console.log(req.user._id);
             await User.updateOne({'_id': req.user._id}, {'password': newPasswordHash});
             req.flash('success', 'Dit password er nu blevet skiftet');
             res.redirect('./profil');
