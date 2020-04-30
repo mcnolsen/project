@@ -34,6 +34,7 @@ app.post('/register', async (req, res) => {
                 })
                 //Gemmer den nye user i databasen med object.save()
                     newUser.save();
+                    req.flash('success', 'Brugeren er oprettet. Du kan nu logge ind');
                     res.redirect('/login');
                 }
                 

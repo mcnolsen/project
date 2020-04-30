@@ -1,4 +1,3 @@
-const passport = require('passport');
 //Til user authentification. Skal først bruge en strategy
 const LocalStrategy = require ('passport-local').Strategy;
 const bcrypt = require ('bcryptjs');
@@ -7,7 +6,7 @@ const bcrypt = require ('bcryptjs');
 //Load user model
 const User = require('./models/User');
 
-const initializePassport =  (passport, email, id) => {
+const initializePassport =  (passport) => {
     //Authentication process. Tager email og password, og kalder done når færdig. Skal være async pga. bcrypt
     const authenticateUser = async (email, password, done) => {
         //Leder efter user med email
@@ -20,7 +19,7 @@ const initializePassport =  (passport, email, id) => {
             try {
                 //Bruger bcryptjs til at compare det givne password og det der er stored i DB for brugeren
                 if(await bcrypt.compare(password, user.password)){
-                    return done (null, user);
+                    return done(null, user);
                 }
                 else{
                 //Returnerer done uden error, men med en meddelse om forkert password
