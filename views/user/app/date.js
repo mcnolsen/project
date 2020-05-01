@@ -13,7 +13,13 @@ const urlParameters = () => {
     else {
         var realMonth = month;
     }
-    const dateMin = today.getFullYear() + '-' + realMonth + '-' +  today.getDate();
+    if (today.getDate() < 10){
+        var todayDate = `0${today.getDate()}`;
+    }
+    else {
+        todayDate = today.getDate();
+    }
+    const dateMin = `${today.getFullYear()}-${realMonth}-${todayDate}`;
     document.getElementById('date').min = dateMin;
     if (date == undefined){
         //Nothing. Tvinger dem til at vælge en dato så ny get request genereres

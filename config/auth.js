@@ -3,7 +3,7 @@ const checkAuthentification = (req, res, next) => {
         if(req.isAuthenticated()){
             return next();
         }
-        req.flash('error', 'Login for at se denne side')
+        req.flash('error', 'Login for at se denne side');
         res.redirect('/login');
 }
 
