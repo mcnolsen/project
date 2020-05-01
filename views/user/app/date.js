@@ -13,6 +13,7 @@ const urlParameters = () => {
     else {
         var realMonth = month;
     }
+    //Tjekker om dagen er under 10. Hvis den er dette, så skal der tilføjes et 0 foran, for ellers virker dato minimum ikke
     if (today.getDate() < 10){
         var todayDate = `0${today.getDate()}`;
     }
