@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
+const app = express();
 const Board = require('../../../models/Board');
 
-router.post('/', async (req, res) => {
+app.post('/admin/opret-board', async (req, res) => {
     try{
         const boardName = await req.body.name;
         const boardFound = await Board.findOne({'name': boardName});
@@ -30,4 +30,4 @@ router.post('/', async (req, res) => {
     }
 })
 
-module.exports = router;
+module.exports = app;

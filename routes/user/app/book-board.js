@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const app = express();
 const Board = require('../../../models/Board');
 const BookedBoard = require('../../../models/BookedBoards');
 
-router.post('/', async (req, res) => {
+app.post('/user/book-board', async (req, res) => {
     try{
 
         const user = req.user;
@@ -40,4 +40,4 @@ router.post('/', async (req, res) => {
     }
 })
 
-module.exports = router;
+module.exports = app;

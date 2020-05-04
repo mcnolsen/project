@@ -71,10 +71,11 @@ app.use(adminRoutes);
 
 //Admin board oprettelse. Bruger router
 const opretBoard = require('./routes/admin/app/opret-board');
-app.use('/admin/opret-board', opretBoard);
+app.use(opretBoard);
 
+//Bookboard post route
 const bookBoard = require ('./routes/user/app/book-board');
-app.use('/user/book-board', bookBoard);
+app.use(bookBoard);
 
 //Server html, css & js leverance
 app.use(express.static('views'));
