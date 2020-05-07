@@ -9,9 +9,6 @@ const bcrypt = require ('bcryptjs');
 
 
 //User routes
-app.get('/user/arrangementer', auth.checkAuthentification, (req, res) => {
-    res.render('./user/arrangementer.ejs', {userType: req.user.userType})
-})
 app.get('/user/book-board', auth.checkAuthentification, async (req, res) => {
 
     const boardID = req.query.id;
